@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *~
 .classpath
 .project
@@ -8,3 +9,11 @@ target
 MANIFEST.MF
 .idea
 *.iml
+=======
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+>>>>>>> b9ed06ce46c32cef03cc40290b61c44ef213d745
