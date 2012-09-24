@@ -16,6 +16,8 @@ public class QCustomer extends EntityPathBase<Customer> {
 
     private static final long serialVersionUID = 193228670;
 
+    private static final PathInits INITS = PathInits.DIRECT;
+
     public static final QCustomer customer = new QCustomer("customer");
 
     public final StringPath firstName = createString("firstName");
@@ -24,16 +26,27 @@ public class QCustomer extends EntityPathBase<Customer> {
 
     public final StringPath lastName = createString("lastName");
 
+    public final QPhone phone;
+
     public QCustomer(String variable) {
-        super(Customer.class, forVariable(variable));
+        this(Customer.class, forVariable(variable), INITS);
     }
 
     public QCustomer(Path<? extends Customer> path) {
-        super(path.getType(), path.getMetadata());
+        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
     }
 
     public QCustomer(PathMetadata<?> metadata) {
-        super(Customer.class, metadata);
+        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
+    }
+
+    public QCustomer(PathMetadata<?> metadata, PathInits inits) {
+        this(Customer.class, metadata, inits);
+    }
+
+    public QCustomer(Class<? extends Customer> type, PathMetadata<?> metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.phone = inits.isInitialized("phone") ? new QPhone(forProperty("phone")) : null;
     }
 
 }

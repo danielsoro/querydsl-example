@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Customer {
@@ -12,6 +14,9 @@ public class Customer {
 	private Long id;
 	private String firstName;
 	private String lastName;
+	@OneToOne
+	@JoinColumn(name = "phone_id", referencedColumnName = "id")
+	private Phone phone;
 	
 	public Customer() {
 	}
@@ -43,5 +48,13 @@ public class Customer {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public Phone getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Phone phone) {
+		this.phone = phone;
 	}
 }
