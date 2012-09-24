@@ -11,14 +11,13 @@ import com.mysema.query.types.ConstructorExpression;
 
 @Stateless
 public class FachadaQueryDslImpl implements FachadaQueryDsl {
-
+	
 	@Inject
 	private JPAQuery jpaQuery;
-
+	
 	@Override
 	public CustomerDTO findCustomerByFirstName(String firstName) {
 		QCustomer customer = QCustomer.customer;
-
 		return jpaQuery.from(customer)
 				.where(customer.firstName.equalsIgnoreCase(firstName))
 				.uniqueResult(ConstructorExpression.create(CustomerDTO.class,
