@@ -1,6 +1,8 @@
 package br.com.ivia.querydsl.repository;
 
-import junit.framework.Assert;
+import javax.ejb.EJB;
+
+import static junit.framework.Assert.*;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -41,8 +43,11 @@ public class CustomerRepositoryTest {
 								.resolveAsFiles());
 	}
 
+	@EJB
+	private CustomerRepository customerRepository;
+
 	@Test
 	public void testarJunit() {
-		Assert.assertTrue(true);
+		assertNull(customerRepository.findByFirstName("Luiz"));
 	}
 }
