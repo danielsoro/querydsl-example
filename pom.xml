@@ -117,6 +117,15 @@
 			</exclusions>
 		</dependency>
 
+		<!-- LambdaJ Framework -->
+		<!-- Manipulate collections in a pseudo-functional -->
+		<!-- and statically typed way -->
+		<dependency>
+			<groupId>com.googlecode.lambdaj</groupId>
+			<artifactId>lambdaj</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+
 		<!-- QueryDSL Framework -->
 		<dependency>
 			<groupId>com.mysema.querydsl</groupId>
@@ -297,46 +306,19 @@
 		</profile>
 
 		<profile>
-			<id>arquillian-jbossas-managed</id>
+			<!-- An optional Arquillian testing profile that executes tests in your 
+				JBoss AS instance -->
+			<!-- This profile will start a new JBoss AS instance, and execute the 
+				test, shutting it down when done -->
+			<!-- Run with: mvn clean test -Parq-jbossas-managed -->
+			<id>arq-jbossas-managed</id>
 			<dependencies>
-
-				<dependency>
-					<groupId>org.jboss.spec</groupId>
-					<artifactId>jboss-javaee-6.0</artifactId>
-					<version>3.0.0.Final</version>
-					<type>pom</type>
-					<scope>provided</scope>
-					<exclusions>
-						<exclusion>
-							<groupId>xalan</groupId>
-							<artifactId>xalan</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
-
 				<dependency>
 					<groupId>org.jboss.as</groupId>
 					<artifactId>jboss-as-arquillian-container-managed</artifactId>
-					<version>7.1.1.Final</version>
-					<scope>test</scope>
-				</dependency>
-
-				<dependency>
-					<groupId>org.jboss.arquillian.protocol</groupId>
-					<artifactId>arquillian-protocol-servlet</artifactId>
 					<scope>test</scope>
 				</dependency>
 			</dependencies>
-			<build>
-				<testResources>
-					<testResource>
-						<directory>src/test/resources</directory>
-					</testResource>
-					<testResource>
-						<directory>src/test/resources-jbossas-managed</directory>
-					</testResource>
-				</testResources>
-			</build>
 		</profile>
 	</profiles>
 </project>
