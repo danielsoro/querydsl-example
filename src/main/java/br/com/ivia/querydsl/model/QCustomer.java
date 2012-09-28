@@ -20,9 +20,12 @@ public class QCustomer extends EntityPathBase<Customer> {
 
     public static final QCustomer customer = new QCustomer("customer");
 
+    public final QModel _super = new QModel(this);
+
     public final StringPath firstName = createString("firstName");
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    //inherited
+    public final NumberPath<Long> id = _super.id;
 
     public final StringPath lastName = createString("lastName");
 

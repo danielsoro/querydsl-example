@@ -1,17 +1,11 @@
 package br.com.ivia.querydsl.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+public class Customer extends Model{
 	private String firstName;
 	private String lastName;
 	@OneToOne
@@ -24,14 +18,6 @@ public class Customer {
 	public Customer(String firstName) {
 		super();
 		this.firstName = firstName;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {

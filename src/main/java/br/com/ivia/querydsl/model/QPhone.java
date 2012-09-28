@@ -18,7 +18,10 @@ public class QPhone extends EntityPathBase<Phone> {
 
     public static final QPhone phone = new QPhone("phone");
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final QModel _super = new QModel(this);
+
+    //inherited
+    public final NumberPath<Long> id = _super.id;
 
     public final StringPath number = createString("number");
 
