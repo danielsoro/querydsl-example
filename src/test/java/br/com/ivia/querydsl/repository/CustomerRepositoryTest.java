@@ -1,8 +1,8 @@
 package br.com.ivia.querydsl.repository;
 
-import javax.ejb.EJB;
+import static junit.framework.Assert.assertNull;
 
-import static junit.framework.Assert.*;
+import javax.ejb.EJB;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
