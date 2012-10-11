@@ -15,7 +15,7 @@ O processo do teste é todo feito com Arquillian (http://www.jboss.org/arquillia
 
 MAIS INFO
 =========
-Este meu exemplo está rodando em um Container JavaEE JBoss Communty Server 7.1.1 :)
+Este meu exemplo está rodando em um Container JavaEE JBoss Communty Server 7.1.1 :-)
 
 
 Daniel Cunha<br />
