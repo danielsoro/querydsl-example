@@ -20,3 +20,7 @@ Este meu exemplo está rodando em um Container JavaEE JBoss Communty Server 7.1.
 
 Daniel Cunha<br />
 danielsoro@gmail.com
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/danielsoro/querydsl-example/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
